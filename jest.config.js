@@ -64,9 +64,9 @@ const tslint = {
 }
 
 module.exports = {
-  projects: {
+  projects: [
     test,
     standardjs,
     tslint
-  }
+  ]
 }
