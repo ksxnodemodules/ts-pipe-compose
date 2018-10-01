@@ -1,8 +1,7 @@
 'use strict'
 const iter = require('iter-tools')
 
-const test = {
-  displayName: 'test',
+module.exports = {
   transform: {
     '\\.jsx?$': 'babel-jest',
     '\\.tsx?$': 'ts-jest',
@@ -35,24 +34,4 @@ const test = {
     '.*\\.yml$'
   ],
   testEnvironment: 'node'
-}
-
-const standardjs = {
-  displayName: 'standardjs',
-  runner: 'jest-runner-standard',
-  testMatch: [
-    '**/*.js',
-    '**/*.jsx'
-  ],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/coverage/'
-  ]
-}
-
-module.exports = {
-  projects: [
-    test,
-    standardjs
-  ]
 }
