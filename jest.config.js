@@ -39,7 +39,7 @@ const test = {
 
 const standardjs = {
   displayName: 'standardjs',
-  runner: 'runner-jest-standard',
+  runner: 'jest-runner-standard',
   testMatch: [
     '**/*.js',
     '**/*.jsx'
@@ -52,7 +52,7 @@ const standardjs = {
 
 const tslint = {
   displayName: 'tslint',
-  runner: 'runner-jest-tslint',
+  runner: 'jest-runner-tslint',
   testMatch: [
     '**/*.ts',
     '**/*.tsx'
