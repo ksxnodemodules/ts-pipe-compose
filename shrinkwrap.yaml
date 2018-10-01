@@ -4,7 +4,7 @@ dependencies:
 devDependencies:
   '@types/jest': 23.3.2
   babel-jest: 23.6.0
-  clean-typescript-build: 0.0.6
+  clean-typescript-build: 0.0.7
   iter-tools: 6.1.4
   jest: 23.6.0
   jest-runner-standard: 0.0.12
@@ -668,7 +668,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg==
-  /clean-typescript-build/0.0.6:
+  /clean-typescript-build/0.0.7:
     dependencies:
       '@types/fs-extra': 5.0.4
       '@types/node': 10.11.3
@@ -684,7 +684,7 @@ packages:
       node: ^8.9.0
     hasBin: true
     resolution:
-      integrity: sha512-OKOYsDkiVad6Mx3EWBf90u1BQRP5IUF1TEUiSwWYx2v+XB6Palh1jp9BN5pNtA1gEWWPEkXISY6FUWQvt+HrzA==
+      integrity: sha512-fGl3WMKGZcOZr/3ZFD1p8aBqI/JUaGfTcLZPHWpq73K0HGeHP+zxjWNotcX1Hh2/h5CSY2+v/MorIg8ynqSTuA==
   /cli-cursor/2.1.0:
     dependencies:
       restore-cursor: 2.0.0
@@ -4993,7 +4993,7 @@ specifiers:
   '@types/jest': ^23.3.2
   '@types/node': ^10.11.3
   babel-jest: ^23.6.0
-  clean-typescript-build: ^0.0.6
+  clean-typescript-build: ^0.0.7
   iter-tools: ^6.1.4
   jest: ^23.6.0
   jest-runner-standard: ^0.0.12
