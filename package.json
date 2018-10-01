@@ -17,7 +17,7 @@
     "@types/jest": "^23.3.2"
   },
   "scripts": {
-    "clean": "clean-typescript-build",
+    "clean": "clean-typescript-build .",
     "build": "tsc",
     "test": "npm run clean && npm run type-check && jest --coverage",
     "type-check": "tsc --noEmit",
