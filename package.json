@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@types/node": "^10.11.3",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.1",
+    "standard": "^12.0.1",
+    "jest": "^23.6.0",
+    "jest-runner-standard": "^0.0.12",
+    "jest-runner-tslint": "^1.0.5",
+    "babel-jest": "^23.6.0",
+    "ts-jest": "^23.10.3",
+    "yaml-jest": "^1.0.5",
+    "clean-typescript-build": "^0.0.6",
+    "@types/jest": "^23.3.2"
+  },
+  "scripts": {
+    "clean": "clean-typescript-build",
+    "build": "tsc",
+    "test": "clean-typescript-build && jest --coverage",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}
