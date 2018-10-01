@@ -22,6 +22,12 @@
     "test": "clean-typescript-build && tsc --noEmit && jest --coverage",
     "prepublishOnly": "npm test && npm run build"
   },
+  "standard": {
+    "env": {
+      "jest": true,
+      "browser": true
+    }
+  },
   "engines": {
     "node": ">= 8.9.0"
   }
