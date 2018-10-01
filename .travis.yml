@@ -24,7 +24,6 @@ before_install:
 
 install:
   - pnpm recursive install
-  - bash scripts/ci/install.sh
 
 script:
   - pnpm test
