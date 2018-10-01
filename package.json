@@ -19,7 +19,8 @@
   "scripts": {
     "clean": "clean-typescript-build",
     "build": "tsc",
-    "test": "clean-typescript-build && tsc --noEmit && jest --coverage",
+    "test": "npm run clean && npm run type-check && jest --coverage",
+    "type-check": "tsc --noEmit",
     "prepublishOnly": "npm test && npm run build"
   },
   "standard": {
