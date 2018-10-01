@@ -50,23 +50,9 @@ const standardjs = {
   ]
 }
 
-const tslint = {
-  displayName: 'tslint',
-  runner: 'jest-runner-tslint',
-  testMatch: [
-    '**/*.ts',
-    '**/*.tsx'
-  ],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/coverage/'
-  ]
-}
-
 module.exports = {
   projects: [
     test,
-    standardjs,
-    tslint
+    standardjs
   ]
 }
