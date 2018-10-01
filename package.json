@@ -18,7 +18,7 @@
   "scripts": {
     "clean": "clean-typescript-build",
     "build": "tsc",
-    "test": "clean-typescript-build && jest --coverage",
+    "test": "clean-typescript-build && tsc --noEmit && jest --coverage",
     "prepublishOnly": "npm test && npm run build"
   },
   "engines": {
