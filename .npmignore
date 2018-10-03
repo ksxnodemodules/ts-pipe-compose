@@ -24,3 +24,6 @@ shrinkwrap*
 renovate*
 tsconfig*
 jest.config*
+*.ts
+!*.d.ts
+*.map.*
