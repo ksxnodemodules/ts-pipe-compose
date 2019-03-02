@@ -13,7 +13,7 @@
     "ts-jest": "^24.0.0",
     "yaml-jest": "^1.0.5",
     "iter-tools": "^6.1.4",
-    "clean-typescript-build": "^0.0.7",
+    "clean-typescript-build": "^0.1.0",
     "@types/jest": "^24.0.0"
   },
   "scripts": {
