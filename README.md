@@ -4,7 +4,7 @@
 
 ## What's the point?
 
-This package not only provides simple `pipe`, `pipeline`, and `compose` implementation, it also provides many TypeScript overloads for each function. [See [index.d.ts](https://cdn.jsdelivr.net/npm/ts-pipe-compose@0.1.1/lib/index.d.ts)]
+This package not only provides simple `pipe`, `pipeline`, and `compose` implementation, it also provides many TypeScript overloads for each function. [See [index.d.ts](https://cdn.jsdelivr.net/npm/ts-pipe-compose@0.1.2/lib/index.d.ts)]
 
 ## Usage
 
