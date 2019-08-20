@@ -19,6 +19,9 @@ temp.*
 *.js
 *.d.ts
 *.map.*
+.vscode
+!/index.js
+!/index.d.ts
 
 # Logs
 logs

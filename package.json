@@ -1,24 +1,50 @@
 {
+  "name": "ts-pipe-compose",
+  "version": "0.0.0",
+  "description": "Pipeline and Compose with TypeScript definition",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodemodules/ts-pipe-compose.git"
+  },
+  "keywords": [
+    "pipeline",
+    "compose",
+    "typescript"
+  ],
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodemodules/ts-pipe-compose/issues"
+  },
+  "homepage": "https://github.com/ksxnodemodules/ts-pipe-compose#readme",
   "dependencies": {
     "@types/node": "^12.7.2",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "typescript": "^3.5.3",
+    "@types/fs-extra": "^8.0.0",
+    "@types/jest": "^24.0.18",
+    "babel-jest": "^24.9.0",
+    "clean-typescript-build": "^0.1.0",
+    "fs-extra": "^8.1.0",
+    "iter-tools": "^6.2.5",
+    "jest": "^24.9.0",
+    "json5": "^2.1.0",
     "standard": "^14.0.0",
+    "static-type-assert": "^3.0.1",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-standard": "^8.0.1",
-    "jest": "^24.9.0",
-    "babel-jest": "^24.9.0",
-    "ts-jest": "^24.0.2",
-    "yaml-jest": "^1.0.5",
-    "iter-tools": "^6.2.5",
-    "clean-typescript-build": "^0.1.0",
-    "@types/jest": "^24.0.18"
+    "typescript": "^3.5.3",
+    "yaml-jest": "^1.0.5"
   },
   "scripts": {
     "clean": "clean-typescript-build .",
-    "build": "tsc",
+    "build": "npm run codegen",
+    "codegen": "node codegen",
     "test": "npm run clean && npm run type-check && npm run lint && jest --coverage",
     "type-check": "tsc --noEmit",
     "lint": "npm run standard && npm run tslint",

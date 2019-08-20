@@ -17,6 +17,7 @@ temp.*
 /appveyor.yml
 /circle.yml
 /sh
+/codegen
 docs
 yarn.lock
 package-lock.json
