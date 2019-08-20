@@ -9,12 +9,12 @@ function pipeValParams (quantity: number) {
   const sig = (arg: number, res: number) =>
     `(x: T${arg}) => T${res}`
 
-  const tail = Array(quantity - 1)
+  const params = Array(quantity - 1)
     .fill(null)
     .map((_, i) => `    f${i + 1}: ${sig(i, i + 1)}`)
     .join(',\n')
 
-  return tail
+  return params
 }
 
 function pipeRetVal (quantity: number) {
