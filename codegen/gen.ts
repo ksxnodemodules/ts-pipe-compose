@@ -17,11 +17,11 @@ function pipeValParams (quantity: number) {
   return tail
 }
 
-function retVal (quantity: number) {
+function pipeRetVal (quantity: number) {
   return `T${quantity - 1}`
 }
 
-function retFunc (quantity: number) {
+function pipeRetFunc (quantity: number) {
   return `(...args: Args) => T${quantity - 1}`
 }
 
@@ -39,7 +39,7 @@ function mkgen (fn: Gen): Gen {
 export function genPipeValOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
   const vals = pipeValParams(quantity)
-  const rets = retVal(quantity)
+  const rets = pipeRetVal(quantity)
   return [
     `export declare function ${name} <`,
     types,
@@ -55,7 +55,7 @@ export const genPipeVal = mkgen(genPipeValOverload)
 export function genPipeFuncOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
   const vals = pipeValParams(quantity)
-  const rets = retFunc(quantity)
+  const rets = pipeRetFunc(quantity)
   return [
     `export declare function ${name} <`,
     '    Args extends any[],',
