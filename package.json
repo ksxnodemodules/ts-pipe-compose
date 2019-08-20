@@ -46,7 +46,7 @@
     "build": "npm run codegen",
     "codegen": "node codegen",
     "test": "npm run clean && npm run type-check && npm run lint && jest --coverage",
-    "type-check": "tsc --noEmit",
+    "type-check": "npm run codegen && tsc --noEmit",
     "lint": "npm run standard && npm run tslint",
     "standard": "standard",
     "standard:fix": "npm run standard --fix",
