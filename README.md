@@ -73,11 +73,11 @@ const y0 = pipe(x, f1, f2, f3, f4)
 
 // pipeline
 const g1 = pipeline(f0, f1, f2, f3, f4)
-const y1 = fn(...args)
+const y1 = g1(...args)
 
 // compose
 const g2 = compose(f4, f3, f2, f1, f0)
-const y2 = fn(...args)
+const y2 = g2(...args)
 ```
 
 ## License
