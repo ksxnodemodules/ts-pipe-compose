@@ -35,7 +35,7 @@ const y = f3(f2(f1(x0)))
 
 #### `pipeline`
 
-**Signature:** `pipeline (...functions): function`
+**Signature:** `pipeline (...functions) → function`
 
 ```javascript
 const fn = pipe(f0, f1, f2, f3)
@@ -49,7 +49,7 @@ const fn = (...args) => f3(f2(f1(f0(...args))))
 
 #### `compose`
 
-**Signature:** `compose (...functions): function`
+**Signature:** `compose (...functions) → function`
 
 ```javascript
 const fn = compose(f3, f2, f1, f0)
