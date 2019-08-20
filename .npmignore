@@ -13,6 +13,7 @@ temp.*
 *.editorconfig*
 *.eslintrc*
 .git*
+/.vscode
 /.travis.yml
 /appveyor.yml
 /circle.yml
