@@ -1,6 +1,6 @@
 import path from 'path'
 import { writeFile } from 'fs-extra'
-import { genPipeVal, genPipeFunc } from './gen-pipe'
+import { genPipeVal, genPipeFunc } from './gen'
 
 export async function main () {
   const filename = path.resolve(__dirname, '../lib/index.d.ts')
