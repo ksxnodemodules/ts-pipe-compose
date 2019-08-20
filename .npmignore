@@ -17,6 +17,7 @@ temp.*
 /appveyor.yml
 /circle.yml
 /sh
+/coverage
 /codegen
 docs
 yarn.lock
