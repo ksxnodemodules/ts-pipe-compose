@@ -17,6 +17,20 @@ function pipeValParams (quantity: number) {
   return params
 }
 
+function composeValParams (quantity: number) {
+  const sig = (arg: number, res: number) =>
+    `(x: T${arg}) => T${res}`
+
+  const begin = Array(quantity - 1)
+    .fill(null)
+    .map((_, i) => `    f${i}: ${sig(i + 1, i)}`)
+    .join(',\n')
+
+  const last = `    f${quantity}: (...args: Args) => T${quantity - 1}`
+
+  return [begin, last].filter(Boolean).join(',\n')
+}
+
 function pipeRetVal (quantity: number) {
   return `T${quantity - 1}`
 }
@@ -68,3 +82,18 @@ export function genPipeFuncOverload (quantity: number, name: string) {
 }
 
 export const genPipeFunc = mkgen(genPipeFuncOverload)
+
+export function genComposeFuncOverload (quantity: number, name: string) {
+  const types = typeParams(quantity)
+  const vals = composeValParams(quantity)
+  return [
+    `export declare function ${name} <`,
+    types + ',',
+    '    Args extends any[]',
+    '> (',
+    vals,
+    '): (...args: Args) => T0;'
+  ].join('\n')
+}
+
+export const genComposeFunc = mkgen(genComposeFuncOverload)
