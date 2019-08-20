@@ -5,7 +5,7 @@ function typeParams (quantity: number) {
     .join(',\n')
 }
 
-function valParams (quantity: number) {
+function pipeValParams (quantity: number) {
   const sig = (arg: number, res: number) =>
     `(x: T${arg}) => T${res}`
 
@@ -38,7 +38,7 @@ function mkgen (fn: Gen): Gen {
 
 export function genPipeValOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
-  const vals = valParams(quantity)
+  const vals = pipeValParams(quantity)
   const rets = retVal(quantity)
   return [
     `export declare function ${name} <`,
@@ -54,7 +54,7 @@ export const genPipeVal = mkgen(genPipeValOverload)
 
 export function genPipeFuncOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
-  const vals = valParams(quantity)
+  const vals = pipeValParams(quantity)
   const rets = retFunc(quantity)
   return [
     `export declare function ${name} <`,
