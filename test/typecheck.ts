@@ -2,39 +2,39 @@ import assert from 'static-type-assert'
 import { pipe, pipeline, compose, composeRight } from '..'
 
 assert<7>(pipe(
-  3 as 3,
+  3 as const,
   x => {
     assert<3>(x)
-    return 'x' as 'x'
+    return 'x' as const
   },
   x => {
     assert<'x'>(x)
-    return 7 as 7
+    return 7 as const
   }
 ))
 
 assert<
   (a: 0, b: 1, c: 2) => 'y'
 >(pipeline(
-  (a: 0, b: 1, c: 2) => [a, b, c] as [0, 1, 2],
+  (a: 0, b: 1, c: 2) => [a, b, c] as const,
   x => {
-    assert<[0, 1, 2]>(x)
-    return 'x' as 'x'
+    assert<readonly [0, 1, 2]>(x)
+    return 'x' as const
   },
   x => {
     assert<'x'>(x)
-    return 'y' as 'y'
+    return 'y' as const
   }
 ))
 
 assert<
   (a: 0, b: 1, c: 2) => 'x4'
 >(compose(
-  (_: 'x3') => 'x4' as 'x4',
-  (_: 'x2') => 'x3' as 'x3',
-  (_: 'x1') => 'x2' as 'x2',
-  (_: 'x0') => 'x1' as 'x1',
-  (_0: 0, _1: 1, _2: 2) => 'x0' as 'x0'
+  (_: 'x3') => 'x4' as const,
+  (_: 'x2') => 'x3' as const,
+  (_: 'x1') => 'x2' as const,
+  (_: 'x0') => 'x1' as const,
+  (_0: 0, _1: 1, _2: 2) => 'x0' as const
 ))
 
 assert<typeof composeRight>(pipeline)
