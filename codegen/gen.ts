@@ -43,10 +43,15 @@ interface Gen {
   (quantity: number, name: string): string
 }
 
-function mkgen (fn: Gen): Gen {
+interface GenTail {
+  (name: string): string | readonly string[]
+}
+
+function mkgen (fn: Gen, tail: GenTail): Gen {
   return (quantity, name) => Array
     .from({ length: quantity })
     .map((_, i) => fn(i + 1, name))
+    .concat(tail(name))
     .join('\n')
 }
 
@@ -64,7 +69,10 @@ export function genPipeValOverload (quantity: number, name: string) {
   ].join('\n')
 }
 
-export const genPipeVal = mkgen(genPipeValOverload)
+export const genPipeVal = mkgen(
+  genPipeValOverload,
+  name => `export declare function ${name} <T> (x: T, ...fns: ((x: T) => T)[]): T;`
+)
 
 export function genPipeFuncOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
@@ -81,7 +89,18 @@ export function genPipeFuncOverload (quantity: number, name: string) {
   ].join('\n')
 }
 
-export const genPipeFunc = mkgen(genPipeFuncOverload)
+export const genPipeFunc = mkgen(
+  genPipeFuncOverload,
+  name => [
+    `export declare function ${name} <`,
+    '    T,',
+    '    Args extends any[]',
+    '> (',
+    '    f0: (...args: Args) => T,',
+    '    ...fns: ((x: T) => T)[]',
+    '): (...args: Args) => T;'
+  ]
+)
 
 export function genComposeFuncOverload (quantity: number, name: string) {
   const types = typeParams(quantity)
@@ -96,4 +115,7 @@ export function genComposeFuncOverload (quantity: number, name: string) {
   ].join('\n')
 }
 
-export const genComposeFunc = mkgen(genComposeFuncOverload)
+export const genComposeFunc = mkgen(
+  genComposeFuncOverload,
+  () => []
+)
