@@ -92,7 +92,7 @@ describe('pipeline', () => {
       const x0 = Symbol('x0')
       const f0 = jest.fn((..._: string[]) => x0)
       const fn = pipeline(f0)
-      const ys = Array(times).fill(null).map(() => fn(...args))
+      const ys = Array.from({ length: times }).map(() => fn(...args))
       return { args, x0, f0, fn, ys }
     }
 
@@ -130,7 +130,7 @@ describe('pipeline', () => {
       const f2 = jest.fn(() => x2)
       const f3 = jest.fn(() => x3)
       const fn = pipeline(f0, f1, f2, f3)
-      const ys = Array(times).fill(null).map(() => fn(...args))
+      const ys = Array.from({ length: times }).map(() => fn(...args))
       return { args, x0, x1, x2, x3, f0, f1, f2, f3, fn, ys }
     }
 
@@ -216,7 +216,7 @@ describe('compose', () => {
       const x0 = Symbol('x0')
       const f0 = jest.fn((..._: string[]) => x0)
       const fn = compose(f0)
-      const ys = Array(times).fill(null).map(() => fn(...args))
+      const ys = Array.from({ length: times }).map(() => fn(...args))
       return { args, x0, f0, fn, ys }
     }
 
@@ -254,7 +254,7 @@ describe('compose', () => {
       const f2 = jest.fn(() => x2)
       const f3 = jest.fn((..._: string[]) => x3)
       const fn = compose(f0, f1, f2, f3)
-      const ys = Array(times).fill(null).map(() => fn(...args))
+      const ys = Array.from({ length: times }).map(() => fn(...args))
       return { args, x0, x1, x2, x3, f0, f1, f2, f3, fn, ys }
     }
 

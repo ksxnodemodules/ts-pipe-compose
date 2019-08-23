@@ -1,6 +1,6 @@
 function typeParams (quantity: number) {
-  return Array(quantity)
-    .fill(null)
+  return Array
+    .from({ length: quantity })
     .map((_, i) => '    T' + i)
     .join(',\n')
 }
@@ -9,8 +9,8 @@ function pipeValParams (quantity: number) {
   const sig = (arg: number, res: number) =>
     `(x: T${arg}) => T${res}`
 
-  const params = Array(quantity - 1)
-    .fill(null)
+  const params = Array
+    .from({ length: quantity - 1 })
     .map((_, i) => `    f${i + 1}: ${sig(i, i + 1)}`)
     .join(',\n')
 
@@ -21,8 +21,8 @@ function composeValParams (quantity: number) {
   const sig = (arg: number, res: number) =>
     `(x: T${arg}) => T${res}`
 
-  const begin = Array(quantity - 1)
-    .fill(null)
+  const begin = Array
+    .from({ length: quantity - 1 })
     .map((_, i) => `    f${i}: ${sig(i + 1, i)}`)
     .join(',\n')
 
@@ -44,8 +44,8 @@ interface Gen {
 }
 
 function mkgen (fn: Gen): Gen {
-  return (quantity, name) => Array(quantity)
-    .fill(null)
+  return (quantity, name) => Array
+    .from({ length: quantity })
     .map((_, i) => fn(i + 1, name))
     .join('\n')
 }
