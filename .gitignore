@@ -25,6 +25,7 @@ temp.*
 !/index.js
 !/index.mjs
 !/index.d.ts
+!/index.mjs.d.ts
 !/scripts
 !/scripts/*.js
 
