@@ -9,9 +9,9 @@
       "es2019",
       "esnext"
     ],
-    "declaration": true,
-    "sourceMap": true,
-    "importHelpers": true,
+    "declaration": false,
+    "sourceMap": false,
+    "importHelpers": false,
     "strict": true,
     "pretty": true,
     "noUnusedLocals": true,
