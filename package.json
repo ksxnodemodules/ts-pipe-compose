@@ -3,6 +3,8 @@
   "version": "0.1.2",
   "description": "Pipeline and Compose with TypeScript definition",
   "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
@@ -42,17 +44,20 @@
     "yaml-jest": "^1.0.5"
   },
   "scripts": {
-    "clean": "clean-typescript-build .",
-    "build": "npm run codegen",
+    "clean": "rm -rf lib/* && clean-typescript-build .",
+    "build": "npm run compile && npm run codegen",
+    "compile": "npm run compile:mjs && npm run compile:cjs",
+    "compile:mjs": "tsc --build src/tsconfig.mjs.json && mv lib/index.js lib/index.mjs",
+    "compile:cjs": "tsc --build src/tsconfig.cjs.json",
     "codegen": "node codegen",
-    "test": "npm run clean && npm run type-check && npm run lint && jest --coverage",
-    "type-check": "npm run codegen && tsc --noEmit",
+    "test": "npm run type-check && npm run lint && node scripts/run-jest.js",
+    "type-check": "node scripts/run-type-check.js",
     "lint": "npm run standard && npm run tslint",
     "standard": "standard",
     "standard:fix": "npm run standard --fix",
     "tslint": "tslint --project .",
     "tslint:fix": "npm run tslint --fix",
-    "prepublishOnly": "npm test && npm run build"
+    "prepublishOnly": "npm run build && env SKIP_COMPILE=true SKIP_CODEGEN=true npm test"
   },
   "standard": {
     "env": {

@@ -31,3 +31,6 @@ tslint*
 *.ts
 !*.d.ts
 *.map.*
+!/lib
+!/lib/*
+/scripts

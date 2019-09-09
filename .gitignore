@@ -17,11 +17,16 @@ temp.*
 *.tern-project
 *.tern-project.json
 *.js
+*.mjs
 *.d.ts
 *.map.*
 .vscode
+/lib
 !/index.js
+!/index.mjs
 !/index.d.ts
+!/scripts
+!/scripts/*.js
 
 # Logs
 logs
