@@ -1,10 +1,10 @@
-export const pipe = (x: any, ...fns: any[]) =>
+export const pipe = (x, ...fns) =>
   fns.reduce((x, fn) => fn(x), x)
 
-export const pipeline = (...fns: any[]) =>
-  fns.reduce((f, g) => (...args: any[]) => g(f(...args)))
+export const pipeline = (...fns) =>
+  fns.reduce((f, g) => (...args) => g(f(...args)))
 
-export const compose = (...fns: any[]) =>
-  fns.reduce((f, g) => (...args: any[]) => f(g(...args)))
+export const compose = (...fns) =>
+  fns.reduce((f, g) => (...args) => f(g(...args)))
 
 export const composeRight = pipeline
