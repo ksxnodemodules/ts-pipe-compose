@@ -23,6 +23,7 @@
     "emitDecoratorMetadata": true
   },
   "exclude": [
+    "src",
     "node_modules"
   ]
 }

@@ -4,5 +4,9 @@
     "noEmit": false,
     "outDir": "../lib",
     "strict": false
-  }
+  },
+  "include": [
+    "."
+  ],
+  "exclude": []
 }
