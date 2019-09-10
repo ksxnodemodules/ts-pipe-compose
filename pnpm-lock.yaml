@@ -7,10 +7,12 @@ devDependencies:
   babel-jest: 24.9.0
   chalk: 2.4.2
   clean-typescript-build: 0.1.0_typescript@3.6.2
+  cross-env: 5.2.0
   fs-extra: 8.1.0
   iter-tools: 6.2.6
   jest: 24.9.0
   json5: 2.1.0
+  shx: 0.3.2
   standard: 14.1.0
   static-type-assert: 3.0.1_typescript@3.6.2
   ts-jest: 24.0.2_jest@24.9.0
@@ -991,6 +993,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /cross-env/5.2.0:
+    dependencies:
+      cross-spawn: 6.0.5
+      is-windows: 1.0.2
+    dev: true
+    engines:
+      node: '>=4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-jtdNFfFW1hB7sMhr/H6rW1Z45LFqyI431m3qU6bFXcQ3Eh7LtBuG3h74o7ohHZ3crrRkkqHlo4jYHFPcjroANg==
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -1231,6 +1243,10 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-qZryBOJjV//LaxLTV6UC//WewneB3LcXOL9NP++ozKVXsIIIpm/2c13UDiD9Jp2eThsecw9m3jPqDwTyobcdbg==
+  /es6-object-assign/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -2030,6 +2046,10 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-cntlB5ghuB0iuO65Ovoi8ogLHiWGs/5yNrtUcKjFhSSiVeAIVpD7koaSU9RM8mpXw5YDi9RdYXGQMaOURB7ycQ==
+  /interpret/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha1-ftGxQQxqDg94z5XTuEQMY/eLhhQ=
   /invariant/2.2.4:
     dependencies:
       loose-envify: 1.4.0
@@ -3699,6 +3719,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-wlgPA6cCIIg9gKz0fgAPjnzh4yR/LnXovwuo9hvyGvx3h8nX4+/iLZplfUWasXpqD8BdnGnP5njOFjkUwPzvjA==
+  /rechoir/0.6.2:
+    dependencies:
+      resolve: 1.12.0
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
   /regenerator-runtime/0.13.3:
     dev: true
     resolution:
@@ -3966,10 +3994,32 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+  /shelljs/0.8.2:
+    dependencies:
+      glob: 7.1.4
+      interpret: 1.1.0
+      rechoir: 0.6.2
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-pRXeNrCA2Wd9itwhvLp5LZQvPJ0wU6bcjaTMywHHGX5XWhVN2nzSu7WV0q+oUY7mGK3mgSkDDzP3MgjqdyIgbQ==
   /shellwords/0.1.1:
     dev: true
     resolution:
       integrity: sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+  /shx/0.3.2:
+    dependencies:
+      es6-object-assign: 1.1.0
+      minimist: 1.2.0
+      shelljs: 0.8.2
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-aS0mWtW3T2sHAenrSrip2XGv39O9dXIFUqxAEWHEOS1ePtGIBavdPJY1kE2IHl14V/4iCbUiNDPGdyYTtmhSoA==
   /signal-exit/3.0.2:
     dev: true
     resolution:
@@ -4855,10 +4905,12 @@ specifiers:
   babel-jest: ^24.9.0
   chalk: ^2.4.2
   clean-typescript-build: ^0.1.0
+  cross-env: ^5.2.0
   fs-extra: ^8.1.0
   iter-tools: ^6.2.5
   jest: ^24.9.0
   json5: ^2.1.0
+  shx: ^0.3.2
   standard: ^14.0.0
   static-type-assert: ^3.0.1
   ts-jest: ^24.0.2
