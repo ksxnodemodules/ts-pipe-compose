@@ -1,6 +1,12 @@
 const process = require('process')
 const { spawnSync } = require('child_process')
+const { createPrettyExec } = require('pretty-exec')
 const chalk = require('chalk').default
+
+const prettyExec = createPrettyExec({
+  spawn: spawnSync,
+  print: console.info
+})
 
 /**
  * Execute a command
@@ -8,8 +14,7 @@ const chalk = require('chalk').default
  * @param  {...string} args Arguments to pass to command
  */
 function command (cmd, ...args) {
-  console.info('$', cmd, ...args)
-  const { error, status } = spawnSync(cmd, args, { stdio: 'inherit' })
+  const { error, status } = prettyExec(cmd, ...args)
   if (error) throw error
   if (status) throw process.exit(status)
 }
@@ -31,6 +36,7 @@ function skippableCommand (env, cmd, ...args) {
 }
 
 module.exports = {
+  prettyExec,
   command,
   skippableCommand
 }
