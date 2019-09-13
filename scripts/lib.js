@@ -14,7 +14,7 @@ const prettyExec = createPrettyExec({
  * @param  {...string} args Arguments to pass to command
  */
 function command (cmd, ...args) {
-  const { error, status } = prettyExec(cmd, ...args)
+  const { error, status } = prettyExec(cmd, args)
   if (error) throw error
   if (status) throw process.exit(status)
 }
