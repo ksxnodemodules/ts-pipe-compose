@@ -11,7 +11,7 @@ const prettyExec = createPrettyExec({
 /**
  * Execute a command
  * @param {string} cmd Command to run
- * @param  {...string} args Arguments to pass to command
+ * @param {...string} args Arguments to pass to command
  */
 function command (cmd, ...args) {
   const { error, status } = prettyExec(cmd, args)
@@ -23,7 +23,7 @@ function command (cmd, ...args) {
  * Execute a command when environment variable of name `[env]` is not `'true'`
  * @param {string} env Name of environment variable that decides when to skip
  * @param {string} cmd Command to execute
- * @param  {...string} args Arguments to pass to command
+ * @param {...string} args Arguments to pass to command
  */
 function skippableCommand (env, cmd, ...args) {
   if (process.env[env] === 'true') {
