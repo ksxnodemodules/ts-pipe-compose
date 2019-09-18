@@ -49,7 +49,7 @@
   },
   "scripts": {
     "clean": "rm -rf lib/* && clean-typescript-build .",
-    "build": "npm run compile && npm run codegen",
+    "build": "npm run clean && npm run compile && npm run codegen",
     "compile": "npm run compile:mjs && npm run compile:cjs",
     "compile:mjs": "tsc --build src/tsconfig.mjs.json && shx mv lib/index.js lib/index.mjs",
     "compile:cjs": "tsc --build src/tsconfig.cjs.json",
