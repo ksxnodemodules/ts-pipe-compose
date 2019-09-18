@@ -2,6 +2,7 @@
   "name": "ts-pipe-compose",
   "version": "0.1.8",
   "description": "Pipeline and Compose with TypeScript definition",
+  "type": "module",
   "main": "index.js",
   "module": "index.mjs",
   "browser": "index.mjs",
