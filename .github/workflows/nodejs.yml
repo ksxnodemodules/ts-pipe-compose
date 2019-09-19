@@ -1,31 +1,50 @@
 name: Node CI
 on: [push, pull_request]
 jobs:
-  test:
+  init:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12.x]
-        command:
-          - test: npm test
-          - test: npm run type-check
-          - test: npm run tslint
-          - test: npm run standard
-          - test: npm run jest
-          - test: npm run prepublishOnly
-          - pnpm: --frozen-lockfile
+    matrix:
+      node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install pnpm
         run: curl -L https://unpkg.com/@pnpm/self-installer | node
+  install-dependencies:
+    needs: init
+    steps:
       - name: Install dependencies
-        run: pnpm recursive install ${{ matrix.command.pnpm }}
-      - name: Test
-        env:
+        run: pnpm recursive install
+  lint:
+    needs: [init, install-dependencies]
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - type-check
+          - tslint
+          - standard
+          - jest
+    steps:
+      - run: npm run ${{ matrix.command }}
+  test:
+    needs: [init, install-dependencies]
+    strategy:
+      fail-fast: true
+      matrix:
+        command:
+          - test
+          - prepublishOnly
+    steps:
+      - env:
           CI: 'true'
-        run: ${{ matrix.command.test }}
+        run: npm run ${{ matrix.command }}
+  pnpm-lockfile:
+    needs: init
+    strategy:
+      fail-fast: true
+    steps:
+      - run: pnpm recursive install --frozen-lockfile
