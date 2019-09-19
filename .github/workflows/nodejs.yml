@@ -3,8 +3,9 @@ on: [push, pull_request]
 jobs:
   init:
     runs-on: ubuntu-latest
-    matrix:
-      node-version: [12.x]
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js
