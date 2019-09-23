@@ -14,7 +14,7 @@ export async function main () {
     genPipeVal(quantity, 'pipe'),
     genPipeFunc(quantity, 'pipeline'),
     genComposeFunc(quantity, 'compose'),
-    'export const composeRight: typeof pipeline'
+    'export { pipeline as composeRight }'
   ].join('\n\n')
 
   await writeFile(filename, content)

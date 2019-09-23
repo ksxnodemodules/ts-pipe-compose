@@ -7,4 +7,4 @@ export const pipeline = (...fns) =>
 export const compose = (...fns) =>
   fns.reduce((f, g) => (...args) => f(g(...args)))
 
-export const composeRight = pipeline
+export { pipeline as composeRight }
