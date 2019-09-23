@@ -1,6 +1,13 @@
 import path from 'path'
 import { writeFile } from 'fs-extra'
-import { genPipeVal, genPipeFunc, genComposeFunc } from './gen'
+
+import {
+  genPipeVal,
+  genPipeFunc,
+  genComposeFunc,
+  genPipeUnaryFunc,
+  genComposeUnaryFunc
+} from './gen'
 
 export async function main () {
   const filename = path.resolve(__dirname, '../lib/index.d.ts')
@@ -14,7 +21,10 @@ export async function main () {
     genPipeVal(quantity, 'pipe'),
     genPipeFunc(quantity, 'pipeline'),
     genComposeFunc(quantity, 'compose'),
-    'export { pipeline as composeRight }'
+    genPipeUnaryFunc(quantity, 'pipelineUnary'),
+    genComposeUnaryFunc(quantity, 'composeUnary'),
+    'export { pipeline as composeRight }',
+    'export { pipelineUnary as composeUnaryRight }'
   ].join('\n\n')
 
   await writeFile(filename, content)

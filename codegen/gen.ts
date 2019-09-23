@@ -31,12 +31,30 @@ function composeValParams (quantity: number) {
   return [begin, last].filter(Boolean).join(',\n')
 }
 
+function composeUnaryValParams (quantity: number) {
+  const sig = (arg: number, res: number) =>
+    `(x: T${arg}) => T${res}`
+
+  return Array
+    .from({ length: quantity - 1 })
+    .map((_, i) => `    f${i}: ${sig(i + 1, i)}`)
+    .join(',\n')
+}
+
 function pipeRetVal (quantity: number) {
   return `T${quantity - 1}`
 }
 
 function pipeRetFunc (quantity: number) {
   return `(...args: Args) => T${quantity - 1}`
+}
+
+function pipeRetUnaryFunc (quantity: number) {
+  return `(x: T0) => T${quantity - 1}`
+}
+
+function composeUnaryRetFunc (quantity: number) {
+  return `(x: T${quantity - 1}) => T0`
 }
 
 interface Gen {
@@ -97,3 +115,33 @@ export function genComposeFuncOverload (quantity: number, name: string) {
 }
 
 export const genComposeFunc = mkgen(genComposeFuncOverload)
+
+export function genPipeUnaryFuncOverload (quantity: number, name: string) {
+  const types = typeParams(quantity + 1)
+  const vals = pipeValParams(quantity + 1)
+  const rets = pipeRetUnaryFunc(quantity + 1)
+  return [
+    `export declare function ${name} <`,
+    types,
+    '> (',
+    vals,
+    `): ${rets};`
+  ].join('\n')
+}
+
+export const genPipeUnaryFunc = mkgen(genPipeUnaryFuncOverload)
+
+export function genComposeUnaryFuncOverload (quantity: number, name: string) {
+  const types = typeParams(quantity + 1)
+  const vals = composeUnaryValParams(quantity + 1)
+  const rets = composeUnaryRetFunc(quantity + 1)
+  return [
+    `export declare function ${name} <`,
+    types + ',',
+    '> (',
+    vals,
+    `): ${rets};`
+  ].join('\n')
+}
+
+export const genComposeUnaryFunc = mkgen(genComposeUnaryFuncOverload)
