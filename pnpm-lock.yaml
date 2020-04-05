@@ -18,8 +18,8 @@ devDependencies:
   static-type-assert: 3.0.1_typescript@3.8.3
   ts-jest: 24.3.0_jest@24.9.0
   ts-node: 8.8.1_typescript@3.8.3
-  tslint: 5.20.1_typescript@3.8.3
-  tslint-config-standard: 9.0.0_tslint@5.20.1+typescript@3.8.3
+  tslint: 6.1.1_typescript@3.8.3
+  tslint-config-standard: 9.0.0_tslint@6.1.1+typescript@3.8.3
   typescript: 3.8.3
   yaml-jest: 1.0.5
 lockfileVersion: 5.1
@@ -3168,6 +3168,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-iG9AK/dJLtJ0XNgTuDbSyNS3zECqDlAhnQW4CsNxBG3LQJBbHmRX1egw39DmtOdCAqY+dKXV+sgPgilNWUKMVw==
+  /mkdirp/0.5.5:
+    dependencies:
+      minimist: 1.2.5
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
@@ -4545,20 +4552,20 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
-  /tslint-config-standard/9.0.0_tslint@5.20.1+typescript@3.8.3:
+  /tslint-config-standard/9.0.0_tslint@6.1.1+typescript@3.8.3:
     dependencies:
-      tslint-eslint-rules: 5.4.0_tslint@5.20.1+typescript@3.8.3
+      tslint-eslint-rules: 5.4.0_tslint@6.1.1+typescript@3.8.3
     dev: true
     peerDependencies:
       tslint: '*'
       typescript: '*'
     resolution:
       integrity: sha512-CAw9J743RnPMemQV/XQ4YyNreC+A1NItACfkm+cBedrOkz6CQfwlnbKn8anUXBfoa4Zo4tjAhblRbsMNcSLfSw==
-  /tslint-eslint-rules/5.4.0_tslint@5.20.1+typescript@3.8.3:
+  /tslint-eslint-rules/5.4.0_tslint@6.1.1+typescript@3.8.3:
     dependencies:
       doctrine: 0.7.2
       tslib: 1.9.0
-      tslint: 5.20.1_typescript@3.8.3
+      tslint: 6.1.1_typescript@3.8.3
       tsutils: 3.17.1_typescript@3.8.3
       typescript: 3.8.3
     dev: true
@@ -4567,7 +4574,7 @@ packages:
       typescript: ^2.2.0 || ^3.0.0
     resolution:
       integrity: sha512-WlSXE+J2vY/VPgIcqQuijMQiel+UtmXS+4nvK4ZzlDiqBfXse8FAvkNnTcYhnQyOTW5KFM+uRRGXxYhFpuBc6w==
-  /tslint/5.20.1_typescript@3.8.3:
+  /tslint/6.1.1_typescript@3.8.3:
     dependencies:
       '@babel/code-frame': 7.8.3
       builtin-modules: 1.1.1
@@ -4577,7 +4584,7 @@ packages:
       glob: 7.1.6
       js-yaml: 3.13.1
       minimatch: 3.0.4
-      mkdirp: 0.5.4
+      mkdirp: 0.5.5
       resolve: 1.15.1
       semver: 5.7.1
       tslib: 1.11.1
@@ -4590,7 +4597,7 @@ packages:
     peerDependencies:
       typescript: '>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
     resolution:
-      integrity: sha512-EcMxhzCFt8k+/UP5r8waCf/lzmeSyVlqxqMEDQE7rWYiQky8KpIBz1JAoYXfROHrPZ1XXd43q8yQnULOLiBRQg==
+      integrity: sha512-kd6AQ/IgPRpLn6g5TozqzPdGNZ0q0jtXW4//hRcj10qLYBaa3mTUU2y2MCG+RXZm8Zx+KZi0eA+YCrMyNlF4UA==
   /tsutils/2.29.0_typescript@3.8.3:
     dependencies:
       tslib: 1.11.1
@@ -4979,7 +4986,7 @@ specifiers:
   ts-jest: ^24.0.2
   ts-node: ^8.3.0
   tslib: ^1.10.0
-  tslint: ^5.18.0
+  tslint: ^6.0.0
   tslint-config-standard: ^9.0.0
   typescript: ^3.5.3
   yaml-jest: ^1.0.5
