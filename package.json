@@ -40,7 +40,7 @@
     "shx": "^0.3.2",
     "standard": "^14.0.0",
     "static-type-assert": "^3.0.1",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.0.0",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-standard": "^9.0.0",
