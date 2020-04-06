@@ -1,2 +1,2 @@
-/// <reference types="./index.d.ts" />
+/// <reference types="./lib/index.d.ts" />
 export * from './lib/index.mjs'
