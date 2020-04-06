@@ -82,4 +82,4 @@ const y2 = g2(...args)
 
 ## License
 
-[MIT](https://git.io/fjbqB) © [Hoàng Văn Khải](hvksmr1996@gmail.com)
+[MIT](https://git.io/fjbqB) © [Hoàng Văn Khải](https://github.com/KSXGitHub/)
