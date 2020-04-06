@@ -2,10 +2,10 @@
   "name": "ts-pipe-compose",
   "version": "0.1.12",
   "description": "Pipeline and Compose with TypeScript definition",
-  "main": "index.js",
-  "module": "index.mjs",
-  "browser": "index.mjs",
-  "types": "index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "browser": "lib/index.mjs",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ksxnodemodules/ts-pipe-compose.git"
