@@ -15,7 +15,7 @@ devDependencies:
   pretty-exec: 0.3.8
   shx: 0.3.2
   standard: 14.3.3
-  static-type-assert: 3.0.1_typescript@3.8.3
+  static-type-assert: 4.0.0_typescript@3.8.3
   ts-jest: 24.3.0_jest@24.9.0
   ts-node: 8.8.1_typescript@3.8.3
   tslint: 5.20.1_typescript@3.8.3
@@ -4274,7 +4274,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-YICcOcv/VTNyJv1eC1IPNB8ftcY=
-  /static-type-assert/3.0.1_typescript@3.8.3:
+  /static-type-assert/4.0.0_typescript@3.8.3:
     dependencies:
       typescript: 3.8.3
       typescript-compare: 0.0.2
@@ -4282,7 +4282,7 @@ packages:
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /stealthy-require/1.1.1:
     dev: true
     engines:
@@ -4975,7 +4975,7 @@ specifiers:
   pretty-exec: ^0.3.0
   shx: ^0.3.2
   standard: ^14.0.0
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0
   ts-jest: ^24.0.2
   ts-node: ^8.3.0
   tslib: ^1.10.0
