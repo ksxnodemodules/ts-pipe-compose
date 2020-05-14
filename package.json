@@ -23,7 +23,7 @@
   "homepage": "https://github.com/ksxnodemodules/ts-pipe-compose#readme",
   "dependencies": {
     "@types/node": "^12.7.2",
-    "tslib": "^1.10.0"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",

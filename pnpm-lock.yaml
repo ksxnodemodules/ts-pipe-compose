@@ -1,6 +1,6 @@
 dependencies:
   '@types/node': 12.12.34
-  tslib: 1.11.1
+  tslib: 2.0.0
 devDependencies:
   '@types/fs-extra': 8.1.0
   '@types/jest': 24.9.1
@@ -4539,12 +4539,17 @@ packages:
     resolution:
       integrity: sha512-10DE9ONho06QORKAaCBpPiFCdW+tZJuY/84tyypGtl6r+/C7Asq0dhqbRZURuUlLQtZxxDvT8eoj8cGW0ha6Bg==
   /tslib/1.11.1:
+    dev: true
     resolution:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /tslib/1.9.0:
     dev: true
     resolution:
       integrity: sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
+  /tslib/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /tslint-config-standard/9.0.0_tslint@5.20.1+typescript@3.8.3:
     dependencies:
       tslint-eslint-rules: 5.4.0_tslint@5.20.1+typescript@3.8.3
@@ -4978,7 +4983,7 @@ specifiers:
   static-type-assert: ^3.0.1
   ts-jest: ^24.0.2
   ts-node: ^8.3.0
-  tslib: ^1.10.0
+  tslib: ^2.0.0
   tslint: ^5.18.0
   tslint-config-standard: ^9.0.0
   typescript: ^3.5.3
