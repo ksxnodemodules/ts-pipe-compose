@@ -1,7 +1,7 @@
 const process = require('process')
 const { spawnSync } = require('child_process')
 const { createPrettyExec } = require('pretty-exec')
-const chalk = require('chalk').default
+const chalk = require('chalk')
 
 const prettyExec = createPrettyExec({
   spawn: spawnSync,
