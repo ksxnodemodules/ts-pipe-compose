@@ -46,20 +46,20 @@
   },
   "scripts": {
     "clean": "rm -rf lib/* && clean-typescript-build .",
-    "build": "npm run clean && npm run compile && npm run codegen",
-    "compile": "npm run compile:mjs && npm run compile:cjs",
+    "build": "pnpm run clean && pnpm run compile && pnpm run codegen",
+    "compile": "pnpm run compile:mjs && pnpm run compile:cjs",
     "compile:mjs": "tsc --build src/tsconfig.mjs.json && shx mv lib/index.js lib/index.mjs",
     "compile:cjs": "tsc --build src/tsconfig.cjs.json",
     "codegen": "node codegen",
-    "test": "npm run type-check && npm run lint && npm run jest",
+    "test": "pnpm run type-check && pnpm run lint && pnpm run jest",
     "jest": "node scripts/run-jest.js",
     "type-check": "node scripts/run-type-check.js",
-    "lint": "npm run standard && npm run tslint",
+    "lint": "pnpm run standard && pnpm run tslint",
     "standard": "standard",
-    "standard:fix": "npm run standard --fix",
+    "standard:fix": "pnpm run standard --fix",
     "tslint": "tslint --project .",
-    "tslint:fix": "npm run tslint --fix",
-    "prepublishOnly": "npm run build && cross-env SKIP_COMPILE=true SKIP_CODEGEN=true npm test"
+    "tslint:fix": "pnpm run tslint --fix",
+    "prepublishOnly": "pnpm run build && cross-env SKIP_COMPILE=true SKIP_CODEGEN=true npm test"
   },
   "standard": {
     "env": {
