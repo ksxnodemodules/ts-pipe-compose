@@ -1,9 +1,7 @@
-dependencies:
-  '@types/node': 12.12.34
-  tslib: 1.11.1
 devDependencies:
   '@types/fs-extra': 8.1.0
   '@types/jest': 24.9.1
+  '@types/node': 12.12.34
   babel-jest: 24.9.0
   chalk: 2.4.2
   clean-typescript-build: 0.1.5
@@ -18,6 +16,7 @@ devDependencies:
   static-type-assert: 3.0.1_typescript@3.8.3
   ts-jest: 24.3.0_jest@24.9.0
   ts-node: 8.8.1_typescript@3.8.3
+  tslib: 1.11.1
   tslint: 5.20.1_typescript@3.8.3
   tslint-config-standard: 9.0.0_tslint@5.20.1+typescript@3.8.3
   typescript: 3.8.3
@@ -457,7 +456,7 @@ packages:
     resolution:
       integrity: sha512-Fb38HkXSVA4L8fGKEZ6le5bB8r6MRWlOCZbVuWZcmOMSCd2wCYOwN1ibj8daIoV9naq7aaOZjrLCoCMptKU/4Q==
   /@types/node/12.12.34:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-BneGN0J9ke24lBRn44hVHNeDlrXRYF+VRp0HbSUNnEZahXGAysHZIqnf/hER6aabdBgzM4YOV4jrR8gj4Zfi0g==
   /@types/node/13.11.0:
@@ -4539,6 +4538,7 @@ packages:
     resolution:
       integrity: sha512-10DE9ONho06QORKAaCBpPiFCdW+tZJuY/84tyypGtl6r+/C7Asq0dhqbRZURuUlLQtZxxDvT8eoj8cGW0ha6Bg==
   /tslib/1.11.1:
+    dev: true
     resolution:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /tslib/1.9.0:
