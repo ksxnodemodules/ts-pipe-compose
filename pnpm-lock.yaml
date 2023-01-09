@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/fs-extra': ^9.0.2
+  '@types/fs-extra': ^11.0.0
   '@types/jest': ^26.0.15
   '@types/node': ^14.14.0
   babel-jest: ^26.6.0
@@ -24,7 +24,7 @@ specifiers:
   yaml-jest: ^1.0.5
 
 devDependencies:
-  '@types/fs-extra': 9.0.2
+  '@types/fs-extra': 11.0.0
   '@types/jest': 26.0.15
   '@types/node': 14.14.0
   babel-jest: 26.6.0
@@ -719,14 +719,15 @@ packages:
       '@babel/types': 7.12.1
     dev: true
 
-  /@types/fs-extra/8.1.1:
-    resolution: {integrity: sha512-TcUlBem321DFQzBNuz8p0CLLKp0VvF/XH9E4KHNmgwyp4E3AfgI5cjiIVZWlbfThBop2qxFIh4+LeY6hVWWZ2w==}
+  /@types/fs-extra/11.0.0:
+    resolution: {integrity: sha512-zdV5odfHf95B4qr6bdpshG4VMm/3xgnPhSJLa3xh75CYr35e34k+4FQli82Q48sPqwHazJGy+6+jl4T+Vw1AMg==}
     dependencies:
+      '@types/jsonfile': 6.1.1
       '@types/node': 14.14.0
     dev: true
 
-  /@types/fs-extra/9.0.2:
-    resolution: {integrity: sha512-jp0RI6xfZpi5JL8v7WQwpBEQTq63RqW2kxwTZt+m27LcJqQdPVU1yGnT1ZI4EtCDynQQJtIGyQahkiCGCS7e+A==}
+  /@types/fs-extra/8.1.1:
+    resolution: {integrity: sha512-TcUlBem321DFQzBNuz8p0CLLKp0VvF/XH9E4KHNmgwyp4E3AfgI5cjiIVZWlbfThBop2qxFIh4+LeY6hVWWZ2w==}
     dependencies:
       '@types/node': 14.14.0
     dev: true
@@ -762,6 +763,12 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
+    dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 14.14.0
     dev: true
 
   /@types/node/13.13.27:
